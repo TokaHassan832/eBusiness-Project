@@ -20,8 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/',[PostController::class,'index'])->middleware('auth');
-Route::get('/posts/{post}',[PostController::class,'show'])->middleware('auth');
-
-
+Route::prefix('blog')->group(function (){
+    Route::get('/',[PostController::class,'index'])->middleware('auth');
+    Route::get('/posts/{post}',[PostController::class,'show'])->middleware('auth');
+});
