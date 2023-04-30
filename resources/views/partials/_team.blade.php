@@ -1,3 +1,5 @@
+
+
 <!-- ======= Team Section ======= -->
 <div id="team" class="our-team-area area-padding">
     <div class="container">
@@ -9,26 +11,27 @@
             </div>
         </div>
         <div class="row">
+            @foreach($team as $member)
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="single-team-member">
                     <div class="team-img">
                         <a href="#">
-                            <img src="assets/img/team/1.jpg" alt="">
+                            <img src="{{$member->image}}" alt="">
                         </a>
                         <div class="team-social-icon text-center">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{$member->facebook_link}}">
                                         <i class="bi bi-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{$member->twitter_link}}">
                                         <i class="bi bi-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{$member->instagram_link}}">
                                         <i class="bi bi-instagram"></i>
                                     </a>
                                 </li>
@@ -36,110 +39,12 @@
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h4>Jhon Mickel</h4>
-                        <p>Seo</p>
+                        <h4>{{ $member->name }}</h4>
+                        <p>{{ $member->job_description }}</p>
                     </div>
                 </div>
             </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="single-team-member">
-                    <div class="team-img">
-                        <a href="#">
-                            <img src="assets/img/team/2.jpg" alt="">
-                        </a>
-                        <div class="team-social-icon text-center">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4>Andrew Arnold</h4>
-                        <p>Web Developer</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="single-team-member">
-                    <div class="team-img">
-                        <a href="#">
-                            <img src="assets/img/team/3.jpg" alt="">
-                        </a>
-                        <div class="team-social-icon text-center">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4>Lellien Linda</h4>
-                        <p>Web Design</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="single-team-member">
-                    <div class="team-img">
-                        <a href="#">
-                            <img src="assets/img/team/4.jpg" alt="">
-                        </a>
-                        <div class="team-social-icon text-center">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="bi bi-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4>Jhon Powel</h4>
-                        <p>Seo Expert</p>
-                    </div>
-                </div>
-            </div>
+        @endforeach
             <!-- End column -->
         </div>
     </div>

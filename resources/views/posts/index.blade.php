@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="blog-text">
                                         <h4>
-                                            <a href="#">{{$post->title}}</a>
+                                            <a href="blog/posts/{{$post->id}}">{{$post->title}}</a>
                                         </h4>
                                         <p>
                                             {!! $post->excerpt !!}

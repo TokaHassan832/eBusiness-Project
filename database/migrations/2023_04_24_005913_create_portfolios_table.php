@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('portfolioCategory_id');
             $table->string('name');
             $table->text('description');
             $table->string('image');

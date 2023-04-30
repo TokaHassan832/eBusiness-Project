@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
+use App\Models\PortfolioCategory;
+use App\Models\Post;
+use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $team=Team::all();
+        $latestNews = Post::latest()->take(3)->get();
+        $services= Service::all();
+        $categories=PortfolioCategory::all();
+        $portfolios=Portfolio::all();
+        return view('home',['team'=>$team,'latestNews'=>$latestNews, 'services'=>$services,'categories'=>$categories,'portfolios'=>$portfolios]);
     }
 }

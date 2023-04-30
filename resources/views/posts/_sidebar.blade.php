@@ -18,52 +18,19 @@
                 <h4>recent post</h4>
                 <div class="recent-post">
                     <!-- start single post -->
-                    <div class="recent-single-post">
-                        <div class="post-img">
-                            <a href="#">
-                                <img src="assets/img/blog/1.jpg" alt="">
-                            </a>
+                    @foreach($recentPosts as $post)
+
+                        <div class="recent-single-post">
+                           <div class="post-img">
+                              <a href="blog/posts/{{$post->id}}">
+                                  <img src="{{$post->image}}" alt="">
+                              </a>
+                           </div>
+                           <div class="pst-content">
+                              <p><a href="blog/posts/{{$post->id}}"> {{$post->title}}</a></p>
+                           </div>
                         </div>
-                        <div class="pst-content">
-                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                        </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                        <div class="post-img">
-                            <a href="#">
-                                <img src="assets/img/blog/2.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="pst-content">
-                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                        </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                        <div class="post-img">
-                            <a href="#">
-                                <img src="assets/img/blog/3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="pst-content">
-                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                        </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                        <div class="post-img">
-                            <a href="#">
-                                <img src="assets/img/blog/4.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="pst-content">
-                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                        </div>
-                    </div>
+                    @endforeach
                     <!-- End single post -->
                 </div>
             </div>
