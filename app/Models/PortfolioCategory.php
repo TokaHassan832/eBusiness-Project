@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PortfolioCategory extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+
 
     public function portfolios(){
         return $this->hasMany(Portfolio::class);

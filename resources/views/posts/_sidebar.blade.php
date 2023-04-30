@@ -2,9 +2,9 @@
     <div class="page-head-blog">
         <div class="single-blog-page">
             <!-- search option start -->
-            <form action="#">
+            <form action="blog">
                 <div class="search-option">
-                    <input type="text" placeholder="Search...">
+                    <input type="text" name="search" placeholder="Search..." value="{{ request('search') }}">
                     <button class="button" type="submit">
                         <i class="bi bi-search"></i>
                     </button>
@@ -42,7 +42,7 @@
                 <ul>
                     @foreach($categories as $category)
                         <li>
-                            <a href="#">{{$category->name}}</a>
+                            <a href="blog/?category={{ $category }}">{{$category->name}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -77,7 +77,7 @@
                     <ul>
                         @foreach($tags as $tag)
                             <li>
-                                <a href="#">{{$tag->name}}</a>
+                                <a href="blog/?tag={{ $tag }}">{{$tag->name}}</a>
                             </li>
                         @endforeach
                     </ul>

@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+
+    public function scopeFilter($query , array $filters){
+        if ($filters['search'] ?? false){
+            $query->where('title' , 'like' , '%'.request('search').'%')
+                ->orwhere('excerpt' , 'like' , '%'.request('search').'%')
+                ->orwhere('body' , 'like' , '%'.request('search').'%');
+        }
+    }
+
 
     public function author(){
         return $this->belongsTo(User::class,'user_id');

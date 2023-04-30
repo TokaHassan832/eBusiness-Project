@@ -62,7 +62,9 @@
                             </div>
                             @endforeach
                         </div>
-                        {{ $posts->links() }}
+                        <div class="mt-6 p-4">
+                            {{ $posts->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
