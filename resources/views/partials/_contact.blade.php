@@ -61,7 +61,8 @@
                 <!-- Start  contact -->
                 <div class="col-md-6">
                     <div class="form contact-form">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="{{ route('contact.store') }}" method="post" role="form" class="php-email-form">
+                            @csrf
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                             </div>

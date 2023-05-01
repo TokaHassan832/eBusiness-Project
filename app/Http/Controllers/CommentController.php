@@ -9,7 +9,7 @@ class CommentController extends Controller
 {
     public function store(Post $post){
          request()->validate([
-             'name'=> 'required',
+             'name'=> 'required|string',
              'email'=>'required|email',
              'body'=>'required'
         ]);
