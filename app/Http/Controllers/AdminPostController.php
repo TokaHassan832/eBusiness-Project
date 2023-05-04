@@ -40,7 +40,7 @@ class AdminPostController extends Controller
          }
 
          Post::create($attributes);
-         return redirect('admin.posts.index');
+        return redirect()->route('admin.index');
     }
 
     public function update(Request $request , $id){
@@ -58,7 +58,12 @@ class AdminPostController extends Controller
         }
 
         Post::update($attributes);
-        return redirect('admin.posts.index');
+        return redirect()->route('admin.index');
 
+    }
+
+    public function destroy(Post $post){
+        $post->delete();
+        return redirect()->route('admin.index');
     }
 }

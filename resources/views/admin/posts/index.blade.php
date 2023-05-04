@@ -27,7 +27,11 @@
                                     <td>
                                         <a href="blog/posts/{{ $post->id }}" style="color:lightskyblue" class="px-2">Show</a>
                                         <a href="admin/posts/{{ $post->id }}/edit" style="color:lightgreen" class="px-2">Edit</a>
-                                        <a href="#" style="color:red" class="px-2">Delete</a>
+                                        <form action="admin/posts/{{ $post->id }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" style="color: red" value="Delete">
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
