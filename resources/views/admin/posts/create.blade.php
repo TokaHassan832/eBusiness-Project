@@ -1,159 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon.ico" />
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#ef3b2d",
-                    },
-                },
-            },
-        };
-    </script>
-    <title>Create Post</title>
-</head>
-<body class="mb-48">
-<main>
-    <div class="mx-4">
-        <div
-            class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
-        >
-            <header class="text-center">
-                <h2 class="text-2xl font-bold uppercase mb-1">
-                    Create a Gig
-                </h2>
-                <p class="mb-4">Post a gig to find a developer</p>
-            </header>
-
-            <form action="">
-                <div class="mb-6">
-                    <label
-                        for="company"
-                        class="inline-block text-lg mb-2"
-                    >Company Name</label
-                    >
-                    <input
-                        type="text"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="company"
-                    />
+@extends('admin.layouts.master')
+    @section('content')
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Create Post</strong>
+                        </div>
+                        <div class="card-body card-block">
+                            <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label  class=" form-control-label">Id</label></div>
+                                    <div class="col-12 col-md-9"><input type="text"  name="id"  class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label  class=" form-control-label">Title</label></div>
+                                    <div class="col-12 col-md-9"><input type="email"  name="title"  class="form-control"><small class="help-block form-text">Please enter your email</small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label  class=" form-control-label">Excerpt</label></div>
+                                    <div class="col-12 col-md-9"><input type="password"  name="excerpt"  class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label  class=" form-control-label">Body</label></div>
+                                    <div class="col-12 col-md-9"><textarea name="body"  rows="9" class="form-control"></textarea></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label  class=" form-control-label">Category</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="category" class="form-control-sm form-control">
+                                            <option value="0">#</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label  class=" form-control-label">Image</label></div>
+                                    <div class="col-12 col-md-9"><input type="file"  name="image" class="form-control-file"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Submit
+                            </button>
+                            <button type="reset" class="btn btn-danger btn-sm">
+                                <i class="fa fa-ban"></i> Reset
+                            </button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div><!-- .animated -->
+    @endsection
 
-                <div class="mb-6">
-                    <label for="title" class="inline-block text-lg mb-2"
-                    >Job Title</label
-                    >
-                    <input
-                        type="text"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="title"
-                        placeholder="Example: Senior Laravel Developer"
-                    />
-                </div>
 
-                <div class="mb-6">
-                    <label
-                        for="location"
-                        class="inline-block text-lg mb-2"
-                    >Job Location</label
-                    >
-                    <input
-                        type="text"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="location"
-                        placeholder="Example: Remote, Boston MA, etc"
-                    />
-                </div>
-
-                <div class="mb-6">
-                    <label for="email" class="inline-block text-lg mb-2"
-                    >Contact Email</label
-                    >
-                    <input
-                        type="text"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="email"
-                    />
-                </div>
-
-                <div class="mb-6">
-                    <label
-                        for="website"
-                        class="inline-block text-lg mb-2"
-                    >
-                        Website/Application URL
-                    </label>
-                    <input
-                        type="text"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="website"
-                    />
-                </div>
-
-                <div class="mb-6">
-                    <label for="tags" class="inline-block text-lg mb-2">
-                        Tags (Comma Separated)
-                    </label>
-                    <input
-                        type="text"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="tags"
-                        placeholder="Example: Laravel, Backend, Postgres, etc"
-                    />
-                </div>
-
-                <div class="mb-6">
-                    <label for="logo" class="inline-block text-lg mb-2">
-                        Company Logo
-                    </label>
-                    <input
-                        type="file"
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="logo"
-                    />
-                </div>
-
-                <div class="mb-6">
-                    <label
-                        for="description"
-                        class="inline-block text-lg mb-2"
-                    >
-                        Job Description
-                    </label>
-                    <textarea
-                        class="border border-gray-200 rounded p-2 w-full"
-                        name="description"
-                        rows="10"
-                        placeholder="Include tasks, requirements, salary, etc"
-                    ></textarea>
-                </div>
-
-                <div class="mb-6">
-                    <button
-                        class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
-                    >
-                        Create Gig
-                    </button>
-
-                    <a href="/" class="text-black ml-4"> Back </a>
-                </div>
-            </form>
-        </div>
-    </div>
-</main>
-</body>
-</html>

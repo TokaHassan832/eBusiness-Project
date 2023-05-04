@@ -1,118 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon.ico" />
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
+@extends('admin.layouts.master')
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#ef3b2d",
-                    },
-                },
-            },
-        };
-    </script>
-    <title>Mange Posts</title>
-</head>
+    @section('content')
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">All Posts</strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">title</th>
+                                    <th scope="col">excerpt</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <a href="#" style="color:lightgreen" class="px-2">Edit</a>
+                                        <a href="#" style="color:red" class="px-2">Delete</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .animated -->
+    @endsection
 
-<body class="mb-48">
-<main>
-    <div class=" p-40 mx-4">
-        <div class="bg-gray-50 border border-gray-200 p-10 rounded">
-            <header>
-                <h1
-                    class="text-3xl text-center font-bold my-6 uppercase"
-                >
-                    Manage Posts
-                </h1>
-            </header>
 
-            <table class="w-full table-auto rounded-sm">
-                <tbody>
-                <tr class="border-gray-300">
-                    <td
-                        class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
-                        <a href="show.html">
-                            Laravel Senior Developer
-                        </a>
-                    </td>
-                    <td
-                        class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
-                        <a
-                            href="edit.html"
-                            class="text-green-400 px-6 py-2 rounded-xl"
-                        ><i
-                                class="fa-solid fa-pen-to-square"
-                            ></i>
-                            Edit</a
-                        >
-                    </td>
-                    <td
-                        class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
-                        <form action="">
-                            <button class="text-red-600">
-                                <i
-                                    class="fa-solid fa-trash-can"
-                                ></i>
-                                Delete
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-
-                <tr class="border-gray-300">
-                    <td
-                        class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
-                        <a href="show.html">
-                            Junior Developer Opening
-                        </a>
-                    </td>
-                    <td
-                        class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
-                        <a
-                            href="edit.html"
-                            class="text-green-400 px-6 py-2 rounded-xl"
-                        ><i
-                                class="fa-solid fa-pen-to-square"
-                            ></i>
-                            Edit</a
-                        >
-                    </td>
-                    <td
-                        class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
-                        <form action="">
-                            <button class="text-red-600">
-                                <i
-                                    class="fa-solid fa-trash-can"
-                                ></i>
-                                Delete
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</main>
-</body>
-</html>
