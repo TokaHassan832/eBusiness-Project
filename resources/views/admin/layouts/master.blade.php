@@ -36,7 +36,7 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    <a href="#"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
                 <li class="menu-title">Manage Posts</li><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
@@ -156,6 +156,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <script src="assets/js/main.js"></script>
+
 
 
 </body>

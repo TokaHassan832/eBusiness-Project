@@ -736,7 +736,7 @@
     }
 
     static get NAME() {
-      throw new Error('You have to implement the static method "NAME", for each component!');
+      throw new Error('You have to implement the static method "NAME", for each layouts!');
     }
 
     _getConfig(config) {
@@ -778,7 +778,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.3): base-component.js
+   * Bootstrap (v5.2.3): base-layouts.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -857,7 +857,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.3): util/component-functions.js
+   * Bootstrap (v5.2.3): util/layouts-functions.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */

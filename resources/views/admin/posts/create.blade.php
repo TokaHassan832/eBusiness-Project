@@ -8,6 +8,9 @@
                             <strong>Create Post</strong>
                         </div>
                         <div class="card-body card-block">
+
+                            <x-flash-message/>
+
                             <form action="/posts" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="row form-group">
@@ -64,7 +67,7 @@
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Submit
+                                <i class="fa fa-dot-circle-o"></i> Create
                             </button>
                             <button type="reset" class="btn btn-danger btn-sm">
                                 <i class="fa fa-ban"></i> Reset

@@ -9,6 +9,9 @@
                             <strong class="card-title">All Posts</strong>
                         </div>
                         <div class="card-body">
+
+                            <x-flash-message/>
+
                             <table class="table">
                                 <thead>
                                 <tr>

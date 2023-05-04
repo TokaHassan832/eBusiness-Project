@@ -9,7 +9,7 @@ import { createApp } from 'vue';
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
+ * registering layouts with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
 
@@ -20,14 +20,14 @@ app.component('example-component', ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
+ * Vue layouts. It will recursively scan this directory for the Vue
+ * layouts and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./layouts/ExampleComponent.vue -> <example-layouts></example-layouts>
  */
 
 // Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
+//     app.layouts(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
 // });
 
 /**

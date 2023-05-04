@@ -40,7 +40,7 @@ class AdminPostController extends Controller
          }
 
          Post::create($attributes);
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('message','Post created successfully!');
     }
 
     public function update(Request $request , $id){
@@ -58,12 +58,12 @@ class AdminPostController extends Controller
         }
 
         Post::update($attributes);
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('message','Post updated successfully!');
 
     }
 
     public function destroy(Post $post){
         $post->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('message','Post deleted successfully!');
     }
 }
