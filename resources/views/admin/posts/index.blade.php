@@ -19,15 +19,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($posts as $post)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row">{{ $post->id }}</th>
+                                    <td>{{ $post->title }}</td>
+                                    <td>{!! $post->excerpt !!}</td>
                                     <td>
-                                        <a href="#" style="color:lightgreen" class="px-2">Edit</a>
+                                        <a href="blog/posts/{{ $post->id }}" style="color:lightskyblue" class="px-2">Show</a>
+                                        <a href="admin/posts/{{ $post->id }}/edit" style="color:lightgreen" class="px-2">Edit</a>
                                         <a href="#" style="color:red" class="px-2">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

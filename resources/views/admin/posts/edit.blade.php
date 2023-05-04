@@ -8,34 +8,57 @@
                         <strong>Create Post</strong>
                     </div>
                     <div class="card-body card-block">
-                        <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="/posts" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            @csrf
                             <div class="row form-group">
                                 <div class="col col-md-3"><label  class=" form-control-label">Id</label></div>
-                                <div class="col-12 col-md-9"><input type="text"  name="id"  class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+                                <div class="col-12 col-md-9"><input type="text"  name="id"  class="form-control" value="{{ old('id',$post->id) }}">
+                                    @error('id')
+                                    <small class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label  class=" form-control-label">Title</label></div>
-                                <div class="col-12 col-md-9"><input type="email"  name="title"  class="form-control"><small class="help-block form-text">Please enter your email</small></div>
+                                <div class="col-12 col-md-9"><input type="email"  name="title"  class="form-control" value="{{ old('title',$post->title) }}">
+                                    @error('title')
+                                    <small class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label  class=" form-control-label">Excerpt</label></div>
-                                <div class="col-12 col-md-9"><input type="password"  name="excerpt"  class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
+                                <div class="col-12 col-md-9"><input type="text"  name="excerpt"  class="form-control" value="{{ old('excerpt',$post->excerpt) }}">
+                                    @error('excerpt')
+                                    <small class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label  class=" form-control-label">Body</label></div>
-                                <div class="col-12 col-md-9"><textarea name="body"  rows="9" class="form-control"></textarea></div>
+                                <div class="col-12 col-md-9"><textarea name="body"  rows="9" class="form-control" >{{ old('body',$post->body )}}</textarea>
+                                    @error('body')
+                                    <small class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label  class=" form-control-label">Category</label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="category" class="form-control-sm form-control">
-                                        <option value="0">#</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }} {{ old('category_id',$post->category) == $category->id ? 'selected' : ''}}">{{ $category->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label  class=" form-control-label">Image</label></div>
-                                <div class="col-12 col-md-9"><input type="file"  name="image" class="form-control-file"></div>
+                                <div class="col-12 col-md-9"><input type="file"  name="image" class="form-control-file">
+                                    @error('image')
+                                    <small class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                         </form>
                     </div>
