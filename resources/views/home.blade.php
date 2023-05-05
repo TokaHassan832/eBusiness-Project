@@ -1,5 +1,5 @@
 
-    <x-layout>
+<x-layout>
         @include('partials._hero')
         @include('partials._about')
         @include('partials._services')
@@ -11,5 +11,5 @@
         @include('partials._blog')
         @include('partials._subscribe')
         @include('partials._contact')
-    </x-layout>
+</x-layout>
 

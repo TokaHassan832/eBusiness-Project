@@ -30,6 +30,7 @@
                     <!-- Start single blog -->
                     <div class="col-md-8 col-sm-8 col-xs-12">
                         <div class="row">
+                            @unless(count($posts)==0)
                             @foreach($posts as $post)
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="single-blog">
@@ -61,6 +62,9 @@
                                 </div>
                             </div>
                             @endforeach
+                            @else
+                            <p>No Posts Found..</p>
+                            @endunless
                         </div>
                         <div class="mt-6 p-4">
                             {{ $posts->links() }}

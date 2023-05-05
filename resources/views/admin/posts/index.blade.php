@@ -11,7 +11,7 @@
                         <div class="card-body">
 
                             <x-flash-message/>
-
+                            @unless(count($posts)==0)
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -38,6 +38,9 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                                @else
+                                    <p class="px-4">No Posts Found..</p>
+                                @endunless
                                 </tbody>
                             </table>
                         </div>
