@@ -24,4 +24,6 @@ class PostController extends Controller
         $tags=Tag::all();
         return view('posts.show',['post'=>$post,'categories'=>$categories,'tags'=>$tags,'recentPosts'=>$recentPosts]);
     }
+
+
 }

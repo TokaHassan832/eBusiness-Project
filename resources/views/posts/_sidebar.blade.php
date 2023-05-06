@@ -51,21 +51,28 @@
         <div class="single-blog-page">
             <div class="left-blog">
                 <h4>archive</h4>
+                @php
+                    // Get the posts made in the past month ordered by their creation date
+                    $postsInPastMonth = \App\Models\Post::whereBetween('created_at', [now()->subMonth()->startOfMonth(), now()->startOfMonth()])
+                                                         ->orderBy('created_at', 'desc')
+                                                         ->get();
+
+                    // Get the posts made in the past year ordered by their creation date
+                    $postsInPastYear = \App\Models\Post::whereBetween('created_at', [now()->subYear()->startOfYear(), now()->startOfYear()])
+                                                       ->orderBy('created_at', 'desc')
+                                                       ->get();
+                @endphp
                 <ul>
                     <li>
-                        <a href="#">07 July 2016</a>
-                    </li>
-                    <li>
-                        <a href="#">29 June 2016</a>
-                    </li>
-                    <li>
-                        <a href="#">13 May 2016</a>
-                    </li>
-                    <li>
-                        <a href="#">20 March 2016</a>
-                    </li>
-                    <li>
-                        <a href="#">09 Fabruary 2016</a>
+                        <h6>Posts made in the past month:</h6>
+                        @foreach ($postsInPastMonth as $post)
+                            <a href="/blog/posts/{{ $post->id }}">{{ $post->created_at->format('M j, Y') }}</a>
+                        @endforeach
+
+                        <h6>Posts made in the past year:</h6>
+                        @foreach ($postsInPastYear as $post)
+                            <a href="/blog/posts/{{ $post->id }}">{{ $post->created_at->format('M j, Y') }}</a>
+                        @endforeach
                     </li>
                 </ul>
             </div>
