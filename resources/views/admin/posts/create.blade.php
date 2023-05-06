@@ -11,7 +11,7 @@
 
                             <x-flash-message/>
 
-                            <form action="/posts" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label  class=" form-control-label">Id</label></div>

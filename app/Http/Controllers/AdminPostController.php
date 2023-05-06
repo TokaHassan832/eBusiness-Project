@@ -66,4 +66,24 @@ class AdminPostController extends Controller
         $post->delete();
         return redirect()->route('admin.index')->with('message','Post deleted successfully!');
     }
+
+    public function archive(){
+        $posts=Post::onlyTrashed()->get();
+        return view('admin.posts.archive',['posts'=>$posts]);
+    }
+
+    public function restore($id){
+        $post = Post::withTrashed()->findOrFail($id);
+        $post->restore();
+        return redirect()->route('admin.index')->with('message','Post restored successfully!');
+    }
+
+
+    public function forceDestroy($id){
+        $post=Post::withTrashed()->findOrFail($id);
+        $post->forceDelete();
+        return redirect()->route('admin.index')->with('message','student permanently deleted successfully..');
+    }
+
+
 }

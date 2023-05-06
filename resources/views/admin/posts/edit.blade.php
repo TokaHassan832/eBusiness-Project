@@ -11,7 +11,7 @@
 
                         <x-flash-message/>
 
-                        <form action="/posts/{{ $post->id }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="{{ route('posts.edit',$post->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                             @csrf
                             @method('PATCH')
                             <div class="row form-group">
