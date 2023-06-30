@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        $posts=Post::latest()->filter(request(['search','category']))->paginate(5);
+        $posts=Post::latest()->filter(request(['search','category','tag']))->paginate(5);
         $recentPosts = Post::latest()->take(4)->get();
         $categories=PostCategory::all();
         $tags=Tag::all();

@@ -27,6 +27,17 @@ class Post extends Model
 
             );
 
+
+        $query->when($filters['tag'] ?? false, function ($query, $tag) {
+            $query->whereExists(function ($query) use ($tag) {
+                $query->from('post_tag')
+                    ->join('tags', 'post_tag.tag_id', '=', 'tags.id')
+                    ->whereColumn('post_tag.post_id', 'posts.id')
+                    ->where('tags.id', $tag);
+            });
+        });
+
+
     }
 
 

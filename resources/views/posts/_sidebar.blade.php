@@ -84,7 +84,7 @@
                     <ul>
                         @foreach($tags as $tag)
                             <li>
-                                <a href="blog/?tag={{ $tag }}">{{$tag->name}}</a>
+                                <a href="blog/?tag={{ $tag->id }}">{{$tag->name}}</a>
                             </li>
                         @endforeach
                     </ul>
