@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +28,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/contact',[ContactController::class,'store'])->name('contact.store');
+
 
 Route::prefix('/blog')->group(function (){
     Route::get('/',[PostController::class,'index'])->middleware('auth');
