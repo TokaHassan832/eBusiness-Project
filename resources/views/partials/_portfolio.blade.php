@@ -11,10 +11,12 @@
         <div class="row wesome-project-1 fix">
             <!-- Start Portfolio -page -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <ul id="portfolio-flters">
+                <ul id="portfolio-filters">
                     <li data-filter="*" class="filter-active">All</li>
                     @foreach($categories as $category)
-                    <li data-filter=".filter-app">{{ $category->name }}</li>
+                        <li class="portfolio-item">
+                        <a href="home/?category={{ $category->slug }}">{{$category->name}}</a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -23,6 +25,7 @@
         <div class="row awesome-project-content portfolio-container">
 
             <!-- portfolio-item start -->
+            @unless(count($portfolios)==0)
             @foreach($portfolios as $portfolio)
             <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
                 <div class="single-awesome-project">
@@ -40,6 +43,9 @@
                 </div>
             </div>
         @endforeach
+        @else
+                <p>No Portfolios Found...</p>
+        @endunless
             <!-- portfolio-item end -->
         </div>
     </div>

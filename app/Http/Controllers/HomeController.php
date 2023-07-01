@@ -32,7 +32,7 @@ class HomeController extends Controller
         $latestNews = Post::latest()->take(3)->get();
         $services= Service::all();
         $categories=PortfolioCategory::all();
-        $portfolios=Portfolio::all();
+        $portfolios = Portfolio::filter(['category' => \request('category')])->get();
         return view('home',['team'=>$team,'latestNews'=>$latestNews, 'services'=>$services,'categories'=>$categories,'portfolios'=>$portfolios]);
     }
 }
