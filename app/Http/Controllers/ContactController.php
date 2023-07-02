@@ -22,7 +22,7 @@ class ContactController extends Controller
              'message'=>request('message')
          ]);
 
-         return back();
+         return redirect('/home');
 
     }
 }
